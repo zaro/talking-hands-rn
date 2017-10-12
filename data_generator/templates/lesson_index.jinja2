@@ -1,0 +1,10 @@
+export default {
+  lessons:[
+    {% for lesson_name, lesson in lessons.items() %}
+    {
+      'name': {{ lesson_name}},
+      'file': require('./{{ lesson.filename }}')
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+};
