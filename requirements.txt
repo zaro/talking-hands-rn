@@ -1,0 +1,4 @@
+openpyxl
+requests
+transliterate
+Jinja2
