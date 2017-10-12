@@ -99,10 +99,12 @@ def convert_images(words, img_dir, output_dir):
         if not os.path.exists(in_file):
             raise Exception(f'File missing: {in_file}')
         out_file = f'{filename}.png'
-        if file_extension == 'svg':
-            os.system(f'rsvg-convert -o {img_out_dir}/{out_file} -w 50 -h 50 {in_file}')
+        if file_extension == '.svg':
+            cmd = f'rsvg-convert --background-color=none -o {img_out_dir}/{out_file} -w 50 -h 50 {in_file}'
         else:
-            os.system(f'gm convert {in_file} -resize 50x50 {img_out_dir}/{out_file}')
+            cmd = f'gm convert {in_file} -resize 50x50 {img_out_dir}/{out_file}'
+        print('Run:', cmd)
+        os.system(cmd)
         word['image_png'] = f'img/{out_file}'
 
 
