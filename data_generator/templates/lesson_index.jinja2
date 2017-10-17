@@ -3,8 +3,15 @@ export default {
     {% for lesson_name, lesson in lessons.items() -%}
     {
       'name': '{{ lesson_name}}',
-      'file': require('./{{ lesson.filename }}')
     },
     {%- endfor %}
-  ]
+  ],
+  lessonData: {
+  {% for lesson_name, lesson in lessons.items() -%}
+    '{{ lesson_name}}': require('./{{ lesson.filename }}'),
+  {%- endfor %}
+  },
+  getLessonData(lessonName) {
+    return this.lessonData[lessonName].default;
+  }
 };
