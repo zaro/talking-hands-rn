@@ -1,0 +1,12 @@
+export default {
+  {% for category_name, category in categories.items() -%}
+  {{category_name}}:{
+    {% for _,word in category.items() -%}
+      '{{ word.word}}': {
+        img: require('./{{ word.image_png }}') ,
+        {% if word.pronounce_as %}pronounce_as: '{{ word.pronounce_as }}',{% endif %}
+      },
+    {% endfor -%}
+  },
+  {% endfor -%}
+};
