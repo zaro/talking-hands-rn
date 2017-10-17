@@ -130,6 +130,18 @@ def write_lesson(lesson, words, output_dir):
     render_template('lesson_template.jinja2', context, os.path.join(output_dir, lesson['filename']))
 
 
+def write_words_categories(words, output_dir):
+    categories = {}
+    for word in words.values():
+        if word['type'] not in categories:
+            categories[word['type']] = {}
+        categories[word['type']][word['word']] = word
+    context = {
+        'categories': categories
+    }
+    render_template('words_categories.jinja2', context, os.path.join(output_dir, 'words-categories.js'))
+
+
 parser = argparse.ArgumentParser(description='Import google docs sheet to lessons')
 parser.add_argument('output_dir', help='output dir')
 parser.add_argument('src_images', help='source images dir')
@@ -154,3 +166,4 @@ convert_images(words, args.src_images, args.output_dir)
 for lesson_name, lesson in lessons.items():
     write_lesson(lesson, words, args.output_dir)
 write_lesson_index(lessons, args.output_dir)
+write_words_categories(words, args.output_dir)

@@ -1,11 +1,11 @@
 export default {
   columns:[
-    {% for column in columns %}
+    {% for column in columns -%}
     {
-      {% for word in column %}
+      {% for word in column -%}
       '{{ word.word }}': { img: require('./{{ word.image_png }}') {% if word.pronounce_as %}, pronounce_as: '{{ word.pronounce_as }}'{% endif %}}{% if not loop.last %},{% endif %}
-      {% endfor %}
+      {% endfor -%}
     }{% if not loop.last %},{% endif %}
-    {% endfor %}
+    {%- endfor %}
   ]
 };
