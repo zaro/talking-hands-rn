@@ -26,7 +26,7 @@ class TutorScreen extends React.Component {
       <View style={styles.container}>
         { lessonData.columns.map((column, idx, arr) => [
           <SpeakButtonsColumn config={column} key={idx} />,
-          (idx != arr.length - 1) ? <View style={styles.separator} key={999}/> : null,
+          (idx != arr.length - 1) ? <View style={styles.separator} key={idx + 999}/> : null,
         ])}
       </View>
     );

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import ColorPropType from 'ColorPropType';
 
@@ -15,7 +15,7 @@ import Platform from 'Platform';
 
 import Tts from 'react-native-tts';
 
-export default class ImageButton extends Component {
+export default class ImageButton extends PureComponent {
   static propTypes = {
     text: PropTypes.string.isRequired,
     color: ColorPropType,
@@ -32,8 +32,9 @@ export default class ImageButton extends Component {
       disabled,
       image,
       onPress,
+      style,
     } = this.props;
-    const buttonStyles = [styles.button];
+    const buttonStyles = [styles.button, style];
     const textStyles = [styles.text];
     if (color) {
       if (Platform.OS === 'ios') {
@@ -61,24 +62,23 @@ export default class ImageButton extends Component {
 }
 
 const styles = StyleSheet.create({
-  button: Platform.select({
+  button: {
+    margin: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    ...Platform.select({
     ios: {
-      //flex: 1,
-      margin: 5,
-      justifyContent: 'center',
-      alignItems: 'center',
     },
     android: {
-      //flex: 1,
       elevation: 1,
       // Material design blue from https://material.google.com/style/color.html#color-color-palette
       backgroundColor: '#2196F3',
       borderRadius: 2,
-      margin: 5,
       justifyContent: 'center',
       alignItems: 'center',
     }
-  }),
+  })
+  },
   text: Platform.select({
     ios: {
       // iOS blue from https://developer.apple.com/ios/human-interface-guidelines/visual-design/color/

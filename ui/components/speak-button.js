@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import ImageButton  from './image-button';
 
 import Tts from 'react-native-tts';
 
-export default class SpeakButton extends Component {
+export default class SpeakButton extends PureComponent {
   static propTypes = {
     pronounceAs: PropTypes.string,
     onPress: PropTypes.func,
