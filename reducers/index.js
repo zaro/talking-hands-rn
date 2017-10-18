@@ -6,7 +6,7 @@ import { AppNavigator } from '../navigators/app-navigator';
 import * as actions from './actions';
 
 const tutorScreenAction = AppNavigator.router.getActionForPathAndParams('Tutor');
-const converseScreenAction = AppNavigator.router.getActionForPathAndParams('Converse');
+const converseScreenAction = AppNavigator.router.getActionForPathAndParams('Conversation');
 const initialNavState = AppNavigator.router.getStateForAction(converseScreenAction);
 
 function nav(state = initialNavState, action) {

@@ -22,7 +22,7 @@ export default class SpeakButtonsColumn extends Component {
             words.map((key, idx) =>{
               return <SpeakButton
                 text={key}
-                pronounce_as={config[key].pronounce_as}
+                pronounceAs={config[key].pronounce_as}
                 key={idx}
                 image={config[key].img}
                 onPress={onPressAny}

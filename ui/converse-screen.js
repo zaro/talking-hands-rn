@@ -30,7 +30,7 @@ class ConverseScreen extends React.Component {
     category: 'verb',
   }
   static navigationOptions = {
-    title: 'Converse',
+    title: 'Conversation',
   };
 
   onWord = (word, pronounceAs) => {

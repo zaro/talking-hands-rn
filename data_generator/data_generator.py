@@ -88,24 +88,40 @@ def lesson_filename(lesson_name):
     return f'{lesson_name}.js'
 
 
+def convert_image(image_filename, img_dir, output_dir):
+    filename, file_extension = os.path.splitext(image_filename)
+    in_file = os.path.join(img_dir, image_filename)
+    if not os.path.exists(in_file):
+        raise Exception(f'File missing: {in_file}')
+    out_file = f'{filename}.png'
+    if file_extension == '.svg':
+        cmd = f'rsvg-convert --background-color=none -o {output_dir}/{out_file} -w 50 -h 50 {in_file}'
+    else:
+        cmd = f'gm convert {in_file} -resize 50x50 {output_dir}/{out_file}'
+    print('Run:', cmd)
+    os.system(cmd)
+    return out_file
+
+
 def convert_images(words, img_dir, output_dir):
-    img_out_dir = os.path.join(output_dir, 'img')
+    IMG_DIR = 'wimg'
+    img_out_dir = os.path.join(output_dir, IMG_DIR)
     mkdir(img_out_dir)
 
     for word in words.values():
         image_filename = word['image']
-        filename, file_extension = os.path.splitext(image_filename)
-        in_file = os.path.join(img_dir, image_filename)
-        if not os.path.exists(in_file):
-            raise Exception(f'File missing: {in_file}')
-        out_file = f'{filename}.png'
-        if file_extension == '.svg':
-            cmd = f'rsvg-convert --background-color=none -o {img_out_dir}/{out_file} -w 50 -h 50 {in_file}'
-        else:
-            cmd = f'gm convert {in_file} -resize 50x50 {img_out_dir}/{out_file}'
-        print('Run:', cmd)
-        os.system(cmd)
-        word['image_png'] = f'img/{out_file}'
+        out_file = convert_image(image_filename, img_dir, img_out_dir)
+        word['image_png'] = f'{IMG_DIR}/{out_file}'
+
+
+def convert_images_dir(img_dir, output_dir):
+    IMG_DIR = 'img'
+    img_out_dir = os.path.join(output_dir, IMG_DIR)
+    mkdir(img_out_dir)
+
+    for root, dirs, files in os.walk(img_dir):
+        for image_filename in files:
+            convert_image(image_filename, img_dir, img_out_dir)
 
 
 def write_lesson_index(lessons, output_dir):
@@ -145,6 +161,7 @@ def write_words_categories(words, output_dir):
 parser = argparse.ArgumentParser(description='Import google docs sheet to lessons')
 parser.add_argument('output_dir', help='output dir')
 parser.add_argument('src_images', help='source images dir')
+parser.add_argument('other_images', help='images to be processed')
 parser.add_argument('--rm', dest='remove', action='store_true', help='delete output dir before generating')
 
 
@@ -163,6 +180,8 @@ print('Writing data in:', args.output_dir)
 mkdir(args.output_dir)
 
 convert_images(words, args.src_images, args.output_dir)
+convert_images_dir(args.other_images, args.output_dir)
+
 for lesson_name, lesson in lessons.items():
     write_lesson(lesson, words, args.output_dir)
 write_lesson_index(lessons, args.output_dir)
