@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
     ...AppStyles.buttonBorder,
   },
   listItemIndex: {
+    paddingLeft: 5,
     fontSize: 18,
     fontWeight: '500',
   },
