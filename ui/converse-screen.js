@@ -83,7 +83,7 @@ class ConverseScreen extends React.Component {
     const currentAction = converseChain.indexOf(this.props.category);
     const lastAction = currentAction == converseChain.length - 1;
     const words = this.props.currentWords;
-    const message = this.props.currentWordsPronounceAs.slice(0);
+    const message = this.props.currentWords.slice(0);
 
     for(let i=message.length; i < converseChain.length; ++i){
         message.push('_ _ _');
