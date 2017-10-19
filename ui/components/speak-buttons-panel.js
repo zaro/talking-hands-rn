@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Platform from 'Platform';
 
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, ScrollView} from 'react-native';
 
 import SpeakButton from './speak-button';
 
@@ -11,6 +11,10 @@ export default class SpeakButtonsPanel extends Component {
     config: PropTypes.object,
     onPressAny: PropTypes.func,
     speakOnPress: PropTypes.bool,
+    numColumns: PropTypes.number,
+  }
+  static defaultProps = {
+    numColumns: 4
   }
   render() {
     const {
@@ -18,23 +22,28 @@ export default class SpeakButtonsPanel extends Component {
       onPressAny,
       speakOnPress,
     } = this.props;
-    const words = Object.keys(config);
+    let words = Object.keys(config);
+    for(let i=0;i<10; i++){
+      words = words.concat(Object.keys(config));
+    }
     return (
+      <ScrollView>
         <View style={styles.panelStyle}>
           {
             words.map((key, idx) =>{
               return <SpeakButton
                 text={key}
                 pronounceAs={config[key].pronounce_as}
-                key={key}
+                key={idx}
                 image={config[key].img}
                 onPress={onPressAny}
                 speakOnPress={speakOnPress}
-                style={{flex:1}}
+                style={{width: '30%'}}
               />;
             })
           }
         </View>
+      </ScrollView>
     );
   }
 }
@@ -45,11 +54,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    ...Platform.select({
-      ios: {
-      },
-      android: {
-      }
-    })
+    flexWrap: 'wrap',
   }
 });

@@ -20,17 +20,29 @@ function nav(state = initialNavState, action) {
   // Simply return the original `state` if `nextState` is null or undefined.
   return nextState || state;
 }
-
-const converseState = { currentCategory: 'verb', currentWords: [] };
+const startingCategory = 'verb';
+const converseState = { currentCategory: startingCategory, currentWords: [], currentWordsPronounceAs:[] };
 
 function converse(state = converseState, action) {
   switch (action.type) {
     case actions.CONVERSE_CHANGE_CATEGORY:
       return { ...state, currentCategory: action.category };
     case actions.CONVERSE_ADD_WORD:
-      return { ...state, currentWords: state.currentWords.concat([action.word]) };
+      return {
+        ...state,
+        currentWords: state.currentWords.concat([action.word]),
+        currentWordsPronounceAs: state.currentWordsPronounceAs.concat([action.pronounceAs || action.word])
+      };
+    case actions.CONVERSE_ADD_WORD_CHANGE_CATEGORY:
+    console.log(action);    
+      return {
+        ...state,
+        currentWords: state.currentWords.concat([action.word]),
+        currentWordsPronounceAs: state.currentWordsPronounceAs.concat([action.pronounceAs || action.word]) ,
+        currentCategory: action.category,
+      };
     case actions.CONVERSE_CLEAR:
-      return { ...state, currentWords: [] };
+      return { ...state, currentCategory: action.category || startingCategory, currentWords: [], currentWordsPronounceAs:[] };
     default:
       return state;
   }
