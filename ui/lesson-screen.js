@@ -6,8 +6,8 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 
+import AppStyles from '../styles';
 import SpeakButtonsColumn from './components/speak-buttons-column';
-
 import LessonsIndex from '../data/lesson-index';
 
 export default
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    ...AppStyles.appBackground,
   },
   separator: {
     width: 3,

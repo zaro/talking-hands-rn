@@ -6,6 +6,8 @@ import {
   Button,
 } from 'react-native';
 import { NavigationActions } from 'react-navigation'
+import AppStyles from '../styles';
+
 import ImageButton  from './components/image-button';
 import SpeakButtonsColumn from './components/speak-buttons-column';
 
@@ -56,6 +58,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 22,
+    ...AppStyles.appBackground,
   },
   separator: {
     width: 3,

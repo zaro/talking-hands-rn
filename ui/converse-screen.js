@@ -16,6 +16,7 @@ import {
   converseClear,
 } from '../reducers/actions';
 
+import AppStyles from '../styles';
 import SpeakButtonsPanel from './components/speak-buttons-panel';
 import WordsCategories from '../data/words-categories';
 import Tts from '../tts';
@@ -140,7 +141,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#F5FCFF',
+    ...AppStyles.appBackground,
   },
   messageContainer: {
     flexDirection: 'row',

@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import ColorPropType from 'ColorPropType';
+import AppStyles from '../../styles';
 
 import {
   StyleSheet,
@@ -77,20 +78,9 @@ const styles = StyleSheet.create({
   },
   button: {
     margin: 5,
-    padding: 8,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'transparent',
-    borderRadius: 10,
-    borderColor: '#AAAAAA',
-    ...Platform.select({
-    ios: {
-      borderWidth: 3,
-    },
-    android: {
-      elevation: 4,
-    }
-  })
+    ...AppStyles.buttonBorder,
   },
   text: {
     color: '#101010',

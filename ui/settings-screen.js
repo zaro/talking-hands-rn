@@ -5,6 +5,7 @@ import {
   Text,
   Button,
 } from 'react-native';
+import AppStyles from '../styles';
 
 
 export default
@@ -25,6 +26,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 22,
+    ...AppStyles.appBackground,
   },
   separator: {
     width: 3,

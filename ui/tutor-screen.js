@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import Platform from 'Platform';
+import AppStyles from '../styles';
 import SpeakButtonsColumn from './components/speak-buttons-column';
 
 import LessonsIndex from '../data/lesson-index';
@@ -23,7 +24,10 @@ class LessonsListItem extends React.PureComponent {
   render() {
      return (
        <Touchable accessibilityComponentType="button" onPress={this.onPress}>
-         <Text style={styles.listItem} >{ this.props.title }</Text>
+         <View style={styles.listItem}>
+           <Text style={styles.listItemIndex} >{this.props.index}.</Text>
+           <Text style={styles.listItemText} >{ this.props.title }</Text>
+         </View>
        </Touchable>
       )
    }
@@ -37,22 +41,33 @@ class TutorScreen extends React.Component {
   };
   keyExtractor = (item, index) => item.name
   onPressItem = (id: string) => {
-    console.log('Pressed id:', id);
     this.props.navigation.navigate('Lesson', { lessonName: id })
   }
-  renderItem = ({item}) => (
+
+  // { item: { name: 'Урок 1' },
+  //   index: 49,
+  //   separators:
+  //   { highlight: [Function: highlight],
+  //     unhighlight: [Function: unhighlight],
+  //     updateProps: [Function: updateProps] } }
+  renderItem = ({item, index}) => (
     <LessonsListItem
       id={item.id}
       onPressItem={this.onPressItem}
       title={item.name}
       name={item.name}
+      index={index}
     />
   )
   render() {
+    let lessons = LessonsIndex.lessons;
+    for(let i=0; i<50; ++i){
+      lessons = lessons.concat(LessonsIndex.lessons);
+    }
     return (
       <View style={styles.container}>
         <FlatList
-          data={LessonsIndex.lessons}
+          data={lessons}
           keyExtractor={this.keyExtractor}
           renderItem={this.renderItem}
         />
@@ -65,15 +80,25 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 22,
+    ...AppStyles.appBackground,
   },
   separator: {
     width: 3,
     height: "60%",
     backgroundColor: 'lightgrey',
   },
-  listItem: {
-    padding: 10,
+  listItem :{
+    margin: 5,
+    flexDirection: 'row',
+    ...AppStyles.buttonBorder,
+  },
+  listItemIndex: {
     fontSize: 18,
-    height: 44,
+    fontWeight: '500',
+  },
+  listItemText: {
+    flex: 1,
+    textAlign: 'center',
+    fontSize: 18,
   }
 });
