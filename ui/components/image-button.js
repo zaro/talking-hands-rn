@@ -47,68 +47,66 @@ export default class ImageButton extends PureComponent {
       buttonStyles.push(styles.buttonDisabled);
       textStyles.push(styles.textDisabled);
     }
-    const Touchable = Platform.OS === 'android'
-      ? TouchableNativeFeedback
-      : TouchableOpacity;
-    return (
-      <Touchable accessibilityComponentType="button" disabled={disabled} onPress={onPress}>
-        <View style={buttonStyles}>
-          { image && <Image source={image} style={styles.image}/> }
-          <Text style={textStyles} disabled={disabled}>{text}</Text>
-        </View>
-      </Touchable>
+
+    const content = (
+      <View style={styles.buttonContent} >
+        { image && <Image source={image} style={styles.image}/> }
+        <Text style={textStyles} disabled={disabled}>{text}</Text>
+      </View>
     );
+    if(Platform.OS === 'android') {
+      return (
+        <TouchableNativeFeedback accessibilityComponentType="button" disabled={disabled} onPress={onPress}>
+          <View style={buttonStyles}>{content}</View>
+        </TouchableNativeFeedback>
+      );
+    } else {
+      return (
+        <TouchableOpacity style={buttonStyles} accessibilityComponentType="button" disabled={disabled} onPress={onPress}>
+          {content}
+        </TouchableOpacity>
+      );
+    }
   }
 }
 
 const styles = StyleSheet.create({
+  buttonContent: {
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
   button: {
     margin: 5,
+    padding: 8,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'transparent',
+    borderRadius: 10,
+    borderColor: '#AAAAAA',
     ...Platform.select({
     ios: {
+      borderWidth: 3,
     },
     android: {
-      elevation: 1,
-      // Material design blue from https://material.google.com/style/color.html#color-color-palette
-      backgroundColor: '#2196F3',
-      borderRadius: 2,
-      justifyContent: 'center',
-      alignItems: 'center',
+      elevation: 4,
     }
   })
   },
-  text: Platform.select({
-    ios: {
-      // iOS blue from https://developer.apple.com/ios/human-interface-guidelines/visual-design/color/
-      color: '#007AFF',
-      textAlign: 'center',
-      padding: 8,
-      fontSize: 18
-    },
-    android: {
-      color: 'white',
-      textAlign: 'center',
-      padding: 2,
-      fontWeight: '500'
-    }
-  }),
-  pronounseAsText: Platform.select({
-    ios: {
-      // iOS blue from https://developer.apple.com/ios/human-interface-guidelines/visual-design/color/
-      color: 'grey',
-      textAlign: 'center',
-      padding: 2,
-      fontSize: 18
-    },
-    android: {
-      color: 'grey',
-      textAlign: 'center',
-      padding: 2,
-      fontWeight: '500'
-    }
-  }),
+  text: {
+    color: '#101010',
+    textAlign: 'center',
+    ...Platform.select({
+      ios: {
+        // iOS blue from https://developer.apple.com/ios/human-interface-guidelines/visual-design/color/
+        padding: 8,
+        fontSize: 18
+      },
+      android: {
+        padding: 2,
+        fontWeight: '500'
+      }
+    })
+  },
   buttonDisabled: Platform.select({
     ios: {},
     android: {
@@ -126,7 +124,6 @@ const styles = StyleSheet.create({
   }),
   image: {
     marginTop: 3,
-    width: 50,
-    height: 50,
+    minHeight: 50,
   }
 });

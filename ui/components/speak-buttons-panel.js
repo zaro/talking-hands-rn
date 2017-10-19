@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import Platform from 'Platform';
 
 import {StyleSheet, View} from 'react-native';
 
@@ -19,13 +20,13 @@ export default class SpeakButtonsPanel extends Component {
     } = this.props;
     const words = Object.keys(config);
     return (
-        <View style={styles.columnStyle}>
+        <View style={styles.panelStyle}>
           {
             words.map((key, idx) =>{
               return <SpeakButton
                 text={key}
                 pronounceAs={config[key].pronounce_as}
-                key={idx}
+                key={key}
                 image={config[key].img}
                 onPress={onPressAny}
                 speakOnPress={speakOnPress}
@@ -39,10 +40,16 @@ export default class SpeakButtonsPanel extends Component {
 }
 
 const styles = StyleSheet.create({
-  columnStyle: {
+  panelStyle: {
     flex: 1,
     flexDirection: 'row',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
+    alignItems: 'center',
+    justifyContent: 'center',
+    ...Platform.select({
+      ios: {
+      },
+      android: {
+      }
+    })
   }
 });
