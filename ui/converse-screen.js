@@ -98,6 +98,7 @@ class ConverseScreen extends React.Component {
             name="close"
             color="#000000"
             backgroundColor="transparent"
+            size={24}
             onPress={() => this.reset(true)}
           />
         </View>
@@ -152,5 +153,5 @@ const styles = StyleSheet.create({
     padding: 2,
     fontSize: 24,
     fontWeight: '500',
-  }
+  },
 });
