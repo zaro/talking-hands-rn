@@ -12,19 +12,13 @@ function ifChanged(previousSettings, currentSettings, settingName) {
 export default
 class AppTts {
   static promises = {}
+  static receivedEvents = {}
+
   static store = null;
   static storeUnsubscribe = null;
   static currentSettings = {};
 
   static init(store){
-    switch(Platform.OS) {
-      case  'ios':
-        Tts.setDefaultLanguage('ru-RU');
-        break;
-      case 'android':
-        Tts.setDefaultLanguage('bg-BG');
-        break;
-    }
     Tts.addEventListener('tts-start', AppTts.onTtsStart);
     Tts.addEventListener('tts-finish', AppTts.onTtsFinish);
     Tts.addEventListener('tts-progress', AppTts.onTtsProgress);
@@ -55,27 +49,35 @@ class AppTts {
     }
   }
 
+  static _handleEvent(utteranceId, eventHandlerName, postpone=true) {
+    const remove = eventHandlerName.match(/onFinish|onCancel/);
+    if (AppTts.promises[utteranceId]) {
+      if(AppTts.promises[utteranceId][eventHandlerName]){
+        AppTts.promises[utteranceId][eventHandlerName]();
+      }
+      if(remove) {
+        delete AppTts.promises[utteranceId];
+      }
+    } else if(postpone) {
+      if (!AppTts.receivedEvents[utteranceId]) {
+        AppTts.receivedEvents[utteranceId] = []
+      }
+    }
+  }
+
   static onTtsStart({utteranceId}) {
     console.log('tts-start', utteranceId);
-    if(AppTts.promises[utteranceId].onStart){
-      AppTts.promises[utteranceId].onStart();
-    }
+    AppTts._handleEvent(utteranceId, 'onStart');
   }
 
   static onTtsFinish({utteranceId}) {
     console.log('tts-finish', utteranceId);
-    if(AppTts.promises[utteranceId]){
-      AppTts.promises[utteranceId].onFinish();
-      delete AppTts.promises[utteranceId];
-    }
+    AppTts._handleEvent(utteranceId, 'onFinish');
   }
 
   static onTtsCancel({utteranceId}) {
     console.log('tts-cancel', utteranceId);
-    if(AppTts.promises[utteranceId]){
-      AppTts.promises[utteranceId].onCancel();
-      delete AppTts.promises[utteranceId];
-    }
+    AppTts._handleEvent(utteranceId, 'onCancel');
   }
 
   static onTtsProgress(utteranceId) {
@@ -85,10 +87,17 @@ class AppTts {
     return new Promise(function (resolve, reject) {
       Tts.speak(text)
         .then((utteranceId)=>{
+          console.log('tts-speak', utteranceId);
           AppTts.promises[utteranceId] = {
             onFinish: ()=> resolve(utteranceId, 'finish'),
             onCancel: ()=> resolve(utteranceId, 'cancel'),
             onStart,
+          }
+          if (AppTts.receivedEvents[utteranceId]) {
+            for(let event of AppTts.receivedEvents[utteranceId]){
+              AppTts._handleEvent(utteranceId, event, false);
+            }
+            delete AppTts.receivedEvents[utteranceId];
           }
         })
         .catch((e)=>reject(e))
