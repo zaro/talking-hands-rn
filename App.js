@@ -10,8 +10,8 @@ const store = createStore(appReducer);
 
 
 export default class App extends Component<{}> {
-  componentDidMount() {
-    Tts.init();
+  componentWillMount() {
+    Tts.init(store);
   }
   render() {
     return (

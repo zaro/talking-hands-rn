@@ -4,10 +4,9 @@ import { NavigationActions } from 'react-navigation';
 import { AppNavigator } from '../navigators/app-navigator';
 
 import * as actions from './actions';
+import * as defaults from './defaults'
 
-const tutorScreenAction = AppNavigator.router.getActionForPathAndParams('Tutor');
-const converseScreenAction = AppNavigator.router.getActionForPathAndParams('Conversation');
-const initialNavState = AppNavigator.router.getStateForAction(converseScreenAction);
+const initialNavState = AppNavigator.router.getStateForAction(AppNavigator.router.getActionForPathAndParams(defaults.startScreen));
 
 function nav(state = initialNavState, action) {
   let nextState;
@@ -20,10 +19,8 @@ function nav(state = initialNavState, action) {
   // Simply return the original `state` if `nextState` is null or undefined.
   return nextState || state;
 }
-const startingCategory = 'verb';
-const converseState = { currentCategory: startingCategory, currentWords: [], currentWordsPronounceAs:[] };
 
-function converse(state = converseState, action) {
+function converse(state = defaults.converseState, action) {
   switch (action.type) {
     case actions.CONVERSE_CHANGE_CATEGORY:
       return { ...state, currentCategory: action.category };
@@ -34,7 +31,7 @@ function converse(state = converseState, action) {
         currentWordsPronounceAs: state.currentWordsPronounceAs.concat([action.pronounceAs || action.word])
       };
     case actions.CONVERSE_ADD_WORD_CHANGE_CATEGORY:
-    console.log(action);    
+    console.log(action);
       return {
         ...state,
         currentWords: state.currentWords.concat([action.word]),
@@ -42,7 +39,25 @@ function converse(state = converseState, action) {
         currentCategory: action.category,
       };
     case actions.CONVERSE_CLEAR:
-      return { ...state, currentCategory: action.category || startingCategory, currentWords: [], currentWordsPronounceAs:[] };
+      return { ...state, currentCategory: action.category || defaults.startingCategory, currentWords: [], currentWordsPronounceAs:[] };
+    default:
+      return state;
+  }
+}
+
+function settings(state = defaults.settings, action) {
+  let newState;
+  switch (action.type) {
+    case actions.SETTINGS_SET:
+      newState = { ...state };
+      newState[action.key] = action.value;
+      return newState;
+    case actions.SETTINGS_CLEAR:
+      newState = { ...state };
+      delete newState[action.key];
+      return newState;
+    case actions.SETTINGS_CLEAR_ALL:
+      return defaults.settings;
     default:
       return state;
   }
@@ -51,6 +66,7 @@ function converse(state = converseState, action) {
 const AppReducer = combineReducers({
   nav,
   converse,
+  settings,
 });
 
 export default AppReducer;

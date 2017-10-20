@@ -89,10 +89,10 @@ class ConverseScreen extends React.Component {
     for(let i=message.length; i < converseChain.length; ++i){
         message.push('_ _ _');
     }
-    console.log('Render', opacityAnim._value, this.props.currentWordsPronounceAs, message);
+    const speakOnPress = this.props.speakWordOnPress ? !lastAction : false ;
     return (
       <View style={styles.container}>
-        <SpeakButtonsPanel config={category} onPressAny={this.onWord} speakOnPress={!lastAction}/>
+        <SpeakButtonsPanel config={category} onPressAny={this.onWord} speakOnPress={speakOnPress}/>
         <View style={styles.messageContainer}>
           <Animated.Text style={[styles.message, { opacity: opacityAnim }]}>{message.join('   ')}</Animated.Text>
           <Icon.Button
@@ -113,6 +113,7 @@ const mapStateToProps = state => {
     category: state.converse.currentCategory,
     currentWords: state.converse.currentWords,
     currentWordsPronounceAs: state.converse.currentWordsPronounceAs,
+    speakWordOnPress: state.settings.speakWordOnPress,
   }
 };
 
