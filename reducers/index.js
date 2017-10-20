@@ -52,6 +52,8 @@ function settings(state = defaults.settings, action) {
       newState = { ...state };
       newState[action.key] = action.value;
       return newState;
+    case actions.SETTINGS_REPLACE:
+      return action.settings;
     case actions.SETTINGS_CLEAR:
       newState = { ...state };
       delete newState[action.key];

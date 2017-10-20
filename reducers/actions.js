@@ -4,6 +4,7 @@ export const CONVERSE_ADD_WORD_CHANGE_CATEGORY = 'CONVERSE_ADD_WORD_CHANGE_CATEG
 export const CONVERSE_CLEAR = 'CONVERSE_CLEAR';
 
 export const SETTINGS_SET = 'SETTINGS_SET';
+export const SETTINGS_REPLACE = 'SETTINGS_REPLACE';
 export const SETTINGS_CLEAR = 'SETTINGS_CLEAR'
 export const SETTINGS_CLEAR_ALL = 'SETTINGS_CLEAR_ALL'
 
@@ -25,6 +26,10 @@ export function converseClear(category=null) {
 
 export function settingsSet(key, value) {
   return { type: SETTINGS_SET , key, value }
+}
+
+export function settingsReplace(settings) {
+  return { type: SETTINGS_REPLACE , settings }
 }
 
 export function settingsClear(key) {
