@@ -1,4 +1,4 @@
-export const startScreen = 'Settings';
+export const startScreen = 'Conversation';
 export const startingCategory = 'verb';
 
 export const converseState = {

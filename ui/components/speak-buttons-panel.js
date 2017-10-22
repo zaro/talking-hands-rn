@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Platform from 'Platform';
 
-import {StyleSheet, View, ScrollView} from 'react-native';
+import {StyleSheet, View, ScrollView, FlatList} from 'react-native';
 
 import SpeakButton from './speak-button';
 
@@ -16,34 +16,61 @@ export default class SpeakButtonsPanel extends Component {
   static defaultProps = {
     numColumns: 4
   }
-  render() {
+
+  getListItems() {
     const {
-      config,
-      onPressAny,
-      speakOnPress,
+      config
     } = this.props;
+
+    if ( config === this.prevConfig ) {
+      return this.listItems;
+    }
+    const items = [];
+
     let words = Object.keys(config);
     for(let i=0;i<10; i++){
       words = words.concat(Object.keys(config));
     }
+    for(let i=0; i < words.length; ) {
+      const row = [];
+      for(let count=0; count < 3 && i < words.length; ++count,++i ) {
+        row.push(config[words[i]])
+      }
+      items.push({
+        key: i,
+        words: row,
+      })
+    }
+    this.prevConfig = config;
+    return this.listItems = items;
+  }
+
+  renderRow = ({item}) => {
+    const words = item.words;
     return (
-      <ScrollView>
-        <View style={styles.panelStyle}>
-          {
-            words.map((key, idx) =>{
-              return <SpeakButton
-                text={key}
-                pronounceAs={config[key].pronounce_as}
-                key={idx}
-                image={config[key].img}
-                onPress={onPressAny}
-                speakOnPress={speakOnPress}
-                style={{width: '30%'}}
-              />;
-            })
-          }
-        </View>
-      </ScrollView>
+      <View style={styles.rowStyle}>
+        {
+          words.map((word, idx) =>{
+            return <SpeakButton
+              text={word.word}
+              pronounceAs={word.pronounce_as}
+              key={idx}
+              image={word.img}
+              onPress={this.props.onPressAny}
+              speakOnPress={this.props.speakOnPress}
+              style={{width: '30%'}}
+            />;
+          })
+        }
+      </View>
+    );
+  }
+  render() {
+    return (
+      <FlatList
+        data={this.getListItems()}
+        renderItem={this.renderRow}
+      />
     );
   }
 }
@@ -55,5 +82,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexWrap: 'wrap',
+  },
+  rowStyle: {
+    flex: 1,
+    flexDirection: 'row',
+    alignContent: 'stretch',
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    backgroundColor: 'red',
   }
+
 });
