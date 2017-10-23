@@ -8,6 +8,7 @@ import {
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import I18n from '../i18n';
 
 import {
   converseAddWord,
@@ -34,7 +35,7 @@ class ConverseScreen extends React.Component {
     category: 'verb',
   }
   static navigationOptions = {
-    title: 'Conversation',
+    title: I18n.t('conversation'),
   };
 
   state = {

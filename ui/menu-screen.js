@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import { NavigationActions } from 'react-navigation'
 import AppStyles from '../styles';
+import I18n from '../i18n';
 
 import ImageButton  from './components/image-button';
 import SpeakButtonsColumn from './components/speak-buttons-column';
@@ -29,24 +30,24 @@ const resetToTutor = NavigationActions.reset({
 export default
 class MenuScreen extends React.Component {
   static navigationOptions = {
-    title: 'Menu',
+    title: I18n.t('menu'),
   };
   render() {
     return (
       <View style={styles.container}>
         <ImageButton
           image={require('../data/img/conversation.png')}
-          text="Conversation"
+          text={I18n.t('conversation')}
           onPress={()=> this.props.navigation.dispatch(resetToConversation)}
         />
         <ImageButton
           image={require('../data/img/teacher.png')}
-          text="Tutor"
+          text={I18n.t('tutor')}
           onPress={()=> this.props.navigation.dispatch(resetToTutor)}
         />
         <ImageButton
           image={require('../data/img/settings.png')}
-          text="Settings"
+          text={I18n.t('settings')}
           onPress={()=> this.props.navigation.navigate('Settings')}
         />
       </View>

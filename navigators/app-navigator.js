@@ -11,6 +11,8 @@ import ConverseScreen from '../ui/converse-screen';
 import TutorScreen from '../ui/tutor-screen';
 import LessonScreen from '../ui/lesson-screen';
 
+import I18n from '../i18n';
+
 
 class Hidden extends React.PureComponent {
   render() {
@@ -24,7 +26,7 @@ export const AppNavigator = StackNavigator({
   Lesson: {
     screen: LessonScreen,
     navigationOptions: ({navigation}) => ({
-      title: `Lesson: ${navigation.state.params.lessonName}`,
+      title: `${I18n.t('lesson')}: ${navigation.state.params.lessonName}`,
     }),
   },
   Menu: { screen: MenuScreen},

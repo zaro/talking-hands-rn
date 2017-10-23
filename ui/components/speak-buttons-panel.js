@@ -89,7 +89,6 @@ const styles = StyleSheet.create({
     alignContent: 'stretch',
     alignItems: 'stretch',
     justifyContent: 'center',
-    backgroundColor: 'red',
   }
 
 });

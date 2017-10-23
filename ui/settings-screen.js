@@ -17,6 +17,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import AppStyles from '../styles';
 import Touchable from './components/touchable';
 import Tts from '../tts';
+import I18n from '../i18n';
 import LocaleCode from 'iso-639-1';
 
 import {
@@ -27,7 +28,7 @@ import {
 
 const defaultVoice = {
   id: null,
-  name: 'Default',
+  name: I18n.t('default'),
 }
 
 const overrideLangCodes = {
@@ -36,7 +37,7 @@ const overrideLangCodes = {
 
 class SettingsScreen extends React.Component {
   static navigationOptions = {
-    title: 'Settings',
+    title: I18n.t('settings'),
   };
 
   state = {
@@ -65,13 +66,12 @@ class SettingsScreen extends React.Component {
   }
 
   resetDefaultSettings = () => {
-    console.log('RESET');
     Alert.alert(
-      'Reset settings',
-      'This will reset all values to their defaults. You need to restart the app for the voice change to take effect.',
+      I18n.t('reset_settings'),
+      I18n.t('reset_message'),
       [
-        {text: 'Cancel'},
-        {text: 'OK', onPress: () => this.props.settingsClearAll()},
+        {text: I18n.t('cancel')},
+        {text: I18n.t('ok'), onPress: () => this.props.settingsClearAll()},
       ],
       { cancelable: true }
     );
@@ -84,7 +84,7 @@ class SettingsScreen extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.item}>
-          <Text style={styles.title}>Voice Name</Text>
+          <Text style={styles.title}>{I18n.t('voice')}</Text>
           <Picker
             selectedValue={props.speechVoice}
             onValueChange={(itemValue, itemIndex) => {props.settingsSet('speechVoice', itemValue)}}>
@@ -94,7 +94,7 @@ class SettingsScreen extends React.Component {
           </Picker>
         </View>
         <View style={styles.item}>
-          <Text style={styles.title}>Speech Rate</Text>
+          <Text style={styles.title}>{I18n.t('speech_rate')}</Text>
           <Slider
             style={styles.slider}
             minimumValue={0.01}
@@ -105,7 +105,7 @@ class SettingsScreen extends React.Component {
           />
         </View>
         <View style={styles.item}>
-          <Text style={styles.title}>Speech Pitch</Text>
+          <Text style={styles.title}>{I18n.t('speech_pitch')}</Text>
           <Slider
             style={styles.slider}
             minimumValue={0.5}
@@ -116,14 +116,14 @@ class SettingsScreen extends React.Component {
           />
         </View>
         <View style={styles.itemCheckbox}>
-          <Text style={styles.title}>Say word on press</Text>
+          <Text style={styles.title}>{I18n.t('speak_on_word_press')}</Text>
           <CheckBox
             onValueChange={(v) => props.settingsSet('speakWordOnPress', v)}
             value={props.speakWordOnPress}
           />
         </View>
         <Touchable style={styles.item} onPress={this.resetDefaultSettings}>
-          <Text style={styles.title}>Reset to default settings</Text>
+          <Text style={styles.title}>{I18n.t('reset_settings')}</Text>
         </Touchable>
       </View>
     );

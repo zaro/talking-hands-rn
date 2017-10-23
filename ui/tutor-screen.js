@@ -10,6 +10,7 @@ import {
 import Platform from 'Platform';
 import AppStyles from '../styles';
 import SpeakButtonsColumn from './components/speak-buttons-column';
+import I18n from '../i18n';
 
 import LessonsIndex from '../data/lesson-index';
 
@@ -37,7 +38,7 @@ class LessonsListItem extends React.PureComponent {
 export default
 class TutorScreen extends React.Component {
   static navigationOptions = {
-    title: 'Tutor',
+    title: I18n.t('tutor'),
   };
   keyExtractor = (item, index) => item.name
   onPressItem = (id: string) => {

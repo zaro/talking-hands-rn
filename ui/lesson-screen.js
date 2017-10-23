@@ -5,6 +5,7 @@ import {
   Text,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import I18n from '../i18n';
 
 import AppStyles from '../styles';
 import SpeakButtonsColumn from './components/speak-buttons-column';
@@ -13,7 +14,7 @@ import LessonsIndex from '../data/lesson-index';
 export default
 class TutorScreen extends React.Component {
   static navigationOptions = {
-    title: 'Lesson',
+    title: I18n.t('lesson'),
   };
   render() {
     const {
