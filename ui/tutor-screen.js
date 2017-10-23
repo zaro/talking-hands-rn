@@ -62,9 +62,6 @@ class TutorScreen extends React.Component {
   )
   render() {
     let lessons = LessonsIndex.lessons;
-    for(let i=0; i<50; ++i){
-      lessons = lessons.concat(LessonsIndex.lessons);
-    }
     return (
       <View style={styles.container}>
         <FlatList

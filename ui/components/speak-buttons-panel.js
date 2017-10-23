@@ -28,9 +28,6 @@ export default class SpeakButtonsPanel extends Component {
     const items = [];
 
     let words = Object.keys(config);
-    for(let i=0;i<10; i++){
-      words = words.concat(Object.keys(config));
-    }
     for(let i=0; i < words.length; ) {
       const row = [];
       for(let count=0; count < 3 && i < words.length; ++count,++i ) {
