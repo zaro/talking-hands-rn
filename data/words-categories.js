@@ -54,7 +54,7 @@ export default {
   verb:{
     'Искам': {
         word: 'Искам',
-        img: require('./wimg/want.png') ,
+        img: require('./wimg/hands_01.png') ,
         
       },
     'Подай': {

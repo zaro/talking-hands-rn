@@ -1,7 +1,7 @@
 export default {
   columns:[
     {
-      'Искам': { img: require('./wimg/want.png') }
+      'Искам': { img: require('./wimg/hands_01.png') }
       },{
       'Вода': { img: require('./wimg/glass-of-water.png') },
       'Ябълка': { img: require('./wimg/apple_2.png') },
