@@ -7,7 +7,8 @@ export default {
       'лист': { img: require('./wimg/sheets_2.png') },
       'лепило': { img: require('./wimg/glue.png') },
       'ножица': { img: require('./wimg/scissors_4.png') },
-      'острилка': { img: require('./wimg/pencil-sharpener.png') }
+      'острилка': { img: require('./wimg/pencil-sharpener.png') },
+      'гума': { img: require('./wimg/rubber.png') }
       }
   ]
 };

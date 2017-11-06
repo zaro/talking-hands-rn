@@ -50,6 +50,16 @@ export default {
         img: require('./wimg/pencil-sharpener.png') ,
         
       },
+    'лимон': {
+        word: 'лимон',
+        img: require('./wimg/lemon.png') ,
+        
+      },
+    'гума': {
+        word: 'гума',
+        img: require('./wimg/rubber.png') ,
+        
+      },
     },
   verb:{
     'Искам': {
