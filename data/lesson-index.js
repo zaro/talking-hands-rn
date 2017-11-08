@@ -1,3 +1,5 @@
+import WordsIndex from './words-index';
+
 export default {
   lessons:[
     {

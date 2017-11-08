@@ -1,14 +1,21 @@
+import WordsIndex from './words-index';
+
 export default {
+  panels:[
+  
+  ],
   columns:[
-    {
-      'Подай': { word: 'Подай', img: require('./wimg/hand-over.png') , pronounce_as: 'Подаи'}
-      },{
-      'Молив': { word: 'Молив', img: require('./wimg/pencil.png') },
-      'лист': { word: 'лист', img: require('./wimg/sheets_2.png') },
-      'лепило': { word: 'лепило', img: require('./wimg/glue.png') },
-      'ножица': { word: 'ножица', img: require('./wimg/scissors_4.png') },
-      'острилка': { word: 'острилка', img: require('./wimg/pencil-sharpener.png') },
-      'гума': { word: 'гума', img: require('./wimg/rubber.png') }
-      }
+    [
+      WordsIndex['Подай'],
+      ],
+    [
+      WordsIndex['Молив'],
+      WordsIndex['лист'],
+      WordsIndex['лепило'],
+      WordsIndex['ножица'],
+      WordsIndex['острилка'],
+      WordsIndex['гума'],
+      ],
+    
   ]
 };

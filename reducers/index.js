@@ -31,7 +31,6 @@ function converse(state = defaults.converseState, action) {
         currentWordsPronounceAs: state.currentWordsPronounceAs.concat([action.pronounceAs || action.word])
       };
     case actions.CONVERSE_ADD_WORD_CHANGE_CATEGORY:
-    console.log(action);
       return {
         ...state,
         currentWords: state.currentWords.concat([action.word]),

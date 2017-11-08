@@ -1,3 +1,5 @@
+import WordsIndex from './words-index';
+
 export default {
   lessons:[
     {% for lesson_name, lesson in lessons.items() -%}
@@ -8,7 +10,7 @@ export default {
   ],
   lessonData: {
   {% for lesson_name, lesson in lessons.items() -%}
-    '{{ lesson_name}}': require('./{{ lesson.filename }}'),
+    '{{ lesson_name }}': require('./{{ lesson.filename }}'),
   {%- endfor %}
   },
   getLessonData(lessonName) {

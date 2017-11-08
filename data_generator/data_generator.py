@@ -56,8 +56,9 @@ def read_sheet():
                 (word, word_type, pronounce_as, image) = [row[idx].value if idx < len(row) else None for idx in range(4)]
                 if not word:
                     break
-                if not word_type or not image:
-                    print(f"type or image not defined for '{word}', skipping!")
+                #if not word_type or not image:
+                if not word_type:
+                    print(f"type not defined for '{word}', skipping!")
                     continue
                 words[word] = {
                     'word': word,
@@ -122,6 +123,8 @@ def convert_images(words, img_dirs, output_dir):
 
     for word in words.values():
         image_filename = word['image']
+        if not image_filename:
+            continue
         out_file = convert_image(image_filename, img_dirs, img_out_dir)
         word['image_png'] = f'{IMG_DIR}/{out_file}'
 
@@ -150,7 +153,7 @@ def write_lesson(lesson, words, output_dir):
             continue
         column = []
         for word in column_words:
-            column.append(words[word])
+            column.append((word, words.get(word, None)))
         columns.append(column)
     context = {
         "columns": columns
@@ -165,9 +168,11 @@ def write_words_categories(words, output_dir):
             categories[word['type']] = {}
         categories[word['type']][word['word']] = word
     context = {
-        'categories': categories
+        'categories': categories,
+        'words': words,
     }
     render_template('words_categories.jinja2', context, os.path.join(output_dir, 'words-categories.js'))
+    render_template('words_index.jinja2', context, os.path.join(output_dir, 'words-index.js'))
 
 
 parser = argparse.ArgumentParser(description='Import google docs sheet to lessons')

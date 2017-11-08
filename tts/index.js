@@ -33,7 +33,7 @@ class AppTts {
     const currentSettings = AppTts.currentSettings = AppTts.store.getState().settings;
 
     if (previousSettings !== currentSettings) {
-      console.log(previousSettings, currentSettings);
+      // console.log(previousSettings, currentSettings);
       if (ifChangedNonNull(previousSettings, currentSettings, 'speechLang')) {
         Tts.setDefaultLanguage(currentSettings.speechLang);
       }

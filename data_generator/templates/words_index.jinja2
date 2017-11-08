@@ -1,0 +1,9 @@
+export default {
+  {% for word in words.values() -%}
+      '{{ word.word }}': {
+        word: '{{ word.word }}',
+        {% if word.image_png %}img: require('./{{ word.image_png }}'),{% endif %}
+        {% if word.pronounce_as %}pronounce_as: '{{ word.pronounce_as }}',{% endif %}
+      },
+  {% endfor -%}
+};
