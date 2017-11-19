@@ -79,4 +79,84 @@ export default {
         
         pronounce_as: 'Ии',
       },
+  'книга': {
+        word: 'книга',
+        img: require('./wimg/book_1.png'),
+        
+      },
+  'блуза': {
+        word: 'блуза',
+        img: require('./wimg/long-sleeve-T-shirt.png'),
+        
+      },
+  'панталон': {
+        word: 'панталон',
+        img: require('./wimg/trousers_5.png'),
+        
+      },
+  'дънки': {
+        word: 'дънки',
+        img: require('./wimg/jeans.png'),
+        
+      },
+  'тениска': {
+        word: 'тениска',
+        img: require('./wimg/T-shirt.png'),
+        pronounce_as: 'тениска',
+      },
+  'клин': {
+        word: 'клин',
+        img: require('./wimg/thighs.png'),
+        
+      },
+  'чорапи': {
+        word: 'чорапи',
+        img: require('./wimg/socks.png'),
+        
+      },
+  'син': {
+        word: 'син',
+        img: require('./wimg/blue_1.png'),
+        
+      },
+  'червен': {
+        word: 'червен',
+        img: require('./wimg/red.png'),
+        
+      },
+  'жълт': {
+        word: 'жълт',
+        img: require('./wimg/yellow_1.png'),
+        
+      },
+  'зелен': {
+        word: 'зелен',
+        img: require('./wimg/green_1.png'),
+        
+      },
+  'оранжев': {
+        word: 'оранжев',
+        img: require('./wimg/orange_1.png'),
+        
+      },
+  'розов': {
+        word: 'розов',
+        img: require('./wimg/pink.png'),
+        
+      },
+  'лилав': {
+        word: 'лилав',
+        img: require('./wimg/purple.png'),
+        
+      },
+  'черен': {
+        word: 'черен',
+        img: require('./wimg/black.png'),
+        
+      },
+  'шарен': {
+        word: 'шарен',
+        img: require('./wimg/colours.png'),
+        
+      },
   };

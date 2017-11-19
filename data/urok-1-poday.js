@@ -3,6 +3,22 @@ import WordsIndex from './words-index';
 export default {
   panels:[
   
+    null,
+    
+    
+    null,
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
   ],
   columns:[
     [

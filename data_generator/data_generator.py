@@ -111,7 +111,7 @@ def convert_image(image_filename, img_dirs, output_dir):
         cmd = f"rsvg-convert --background-color=none -o '{output_dir}/{out_file}' -w 50 -h 50 '{in_file}'"
     else:
         cmd = f"gm convert '{in_file}' -resize 50x50 '{output_dir}/{out_file}'"
-    print('Run:', cmd)
+    #print('Run:', cmd)
     os.system(cmd)
     return out_file
 

@@ -14,6 +14,13 @@ export default {
     'острилка': WordsIndex['острилка'],
     'лимон': WordsIndex['лимон'],
     'гума': WordsIndex['гума'],
+    'книга': WordsIndex['книга'],
+    'блуза': WordsIndex['блуза'],
+    'панталон': WordsIndex['панталон'],
+    'дънки': WordsIndex['дънки'],
+    'тениска': WordsIndex['тениска'],
+    'клин': WordsIndex['клин'],
+    'чорапи': WordsIndex['чорапи'],
     },
   verb:{
     'Искам': WordsIndex['Искам'],
@@ -24,5 +31,16 @@ export default {
     },
   conjunction:{
     'и': WordsIndex['и'],
+    },
+  adjective:{
+    'син': WordsIndex['син'],
+    'червен': WordsIndex['червен'],
+    'жълт': WordsIndex['жълт'],
+    'зелен': WordsIndex['зелен'],
+    'оранжев': WordsIndex['оранжев'],
+    'розов': WordsIndex['розов'],
+    'лилав': WordsIndex['лилав'],
+    'черен': WordsIndex['черен'],
+    'шарен': WordsIndex['шарен'],
     },
   };

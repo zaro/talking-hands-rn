@@ -4,7 +4,11 @@ export default {
   panels:[
   {% for column in columns -%}
     {% for word, word_config in column -%}
+    {% if loop.first %}
+    {% if not word_config %}'{{ word }}'{% else %}null{% endif -%},
+    {% else %}
     {% if not word_config %}'{{ word }}',{% endif -%}
+    {% endif %}
     {% endfor -%}
   {%- endfor %}
   ],

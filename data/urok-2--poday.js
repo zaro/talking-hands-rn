@@ -3,6 +3,24 @@ import WordsIndex from './words-index';
 export default {
   panels:[
   
+    null,
+    
+    
+    null,
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
   ],
   columns:[
     [
@@ -15,6 +33,7 @@ export default {
       WordsIndex['ножица'],
       WordsIndex['острилка'],
       WordsIndex['гума'],
+      WordsIndex['книга'],
       ],
     
   ]

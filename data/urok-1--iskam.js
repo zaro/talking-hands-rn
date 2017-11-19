@@ -2,7 +2,27 @@ import WordsIndex from './words-index';
 
 export default {
   panels:[
-  'pronoun','conjunction',
+  
+    'pronoun',
+    
+    
+    
+    
+    'conjunction',
+    
+    null,
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
   ],
   columns:[
     [

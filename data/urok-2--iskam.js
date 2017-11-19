@@ -2,7 +2,29 @@ import WordsIndex from './words-index';
 
 export default {
   panels:[
-  'pronoun','conjunction',
+  
+    'pronoun',
+    
+    
+    
+    
+    'conjunction',
+    
+    null,
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
   ],
   columns:[
     [
@@ -17,6 +39,7 @@ export default {
       WordsIndex['ножица'],
       WordsIndex['острилка'],
       WordsIndex['гума'],
+      WordsIndex['книга'],
       ],
     
   ]
