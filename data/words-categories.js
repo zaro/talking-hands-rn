@@ -21,6 +21,11 @@ export default {
     'тениска': WordsIndex['тениска'],
     'клин': WordsIndex['клин'],
     'чорапи': WordsIndex['чорапи'],
+    'пола': WordsIndex['пола'],
+    'ботуши': WordsIndex['ботуши'],
+    'шал': WordsIndex['шал'],
+    'ръкавици': WordsIndex['ръкавици'],
+    'обувки за планина': WordsIndex['обувки за планина'],
     },
   verb:{
     'Искам': WordsIndex['Искам'],
@@ -42,5 +47,6 @@ export default {
     'лилав': WordsIndex['лилав'],
     'черен': WordsIndex['черен'],
     'шарен': WordsIndex['шарен'],
+    'кафяв': WordsIndex['кафяв'],
     },
   };

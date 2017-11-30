@@ -71,7 +71,7 @@ export default {
       },
   'Аз': {
         word: 'Аз',
-        img: require('./wimg/me_1.png'),
+        img: require('./wimg/Lili.png'),
         
       },
   'и': {
@@ -86,12 +86,12 @@ export default {
       },
   'блуза': {
         word: 'блуза',
-        img: require('./wimg/long-sleeve-T-shirt.png'),
+        img: require('./wimg/long-sleeve-T-shirt_no_colour.png'),
         
       },
   'панталон': {
         word: 'панталон',
-        img: require('./wimg/trousers_5.png'),
+        img: require('./wimg/trousers_5_no_colour.png'),
         
       },
   'дънки': {
@@ -101,7 +101,7 @@ export default {
       },
   'тениска': {
         word: 'тениска',
-        img: require('./wimg/T-shirt.png'),
+        img: require('./wimg/T-shirt_no_colour.png'),
         pronounce_as: 'тениска',
       },
   'клин': {
@@ -111,7 +111,32 @@ export default {
       },
   'чорапи': {
         word: 'чорапи',
-        img: require('./wimg/socks.png'),
+        img: require('./wimg/socks_no_colour.png'),
+        
+      },
+  'пола': {
+        word: 'пола',
+        img: require('./wimg/skirt_no_colour.png'),
+        
+      },
+  'ботуши': {
+        word: 'ботуши',
+        img: require('./wimg/rubber-boots_no_color.png'),
+        
+      },
+  'шал': {
+        word: 'шал',
+        img: require('./wimg/scarf_no_colour.png'),
+        
+      },
+  'ръкавици': {
+        word: 'ръкавици',
+        img: require('./wimg/gloves_3_no_colour.png'),
+        
+      },
+  'обувки за планина': {
+        word: 'обувки за планина',
+        img: require('./wimg/boots_3_no_colour.png'),
         
       },
   'син': {
@@ -157,6 +182,11 @@ export default {
   'шарен': {
         word: 'шарен',
         img: require('./wimg/colours.png'),
+        
+      },
+  'кафяв': {
+        word: 'кафяв',
+        img: require('./wimg/brown.png'),
         
       },
   };

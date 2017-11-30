@@ -27,7 +27,21 @@ export default {
     
     
     
+    
+    
+    
+    
     null,
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -54,6 +68,8 @@ export default {
       WordsIndex['лилав'],
       WordsIndex['черен'],
       WordsIndex['шарен'],
+      WordsIndex['зелен'],
+      WordsIndex['кафяв'],
       ],
     [
       WordsIndex['панталон'],
@@ -61,6 +77,11 @@ export default {
       WordsIndex['блуза'],
       WordsIndex['чорапи'],
       WordsIndex['тениска'],
+      WordsIndex['пола'],
+      WordsIndex['шал'],
+      WordsIndex['ботуши'],
+      WordsIndex['ръкавици'],
+      WordsIndex['обувки за планина'],
       ],
     
   ]
