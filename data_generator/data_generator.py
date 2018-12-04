@@ -2,6 +2,7 @@
 import os
 import tempfile
 import shutil
+import shlex
 import re
 import requests
 from openpyxl import load_workbook
@@ -92,6 +93,8 @@ def lesson_filename(lesson_name):
 
 def normalize_image_filename(image_filename):
     image_filename = re.sub('\s', '-', image_filename)
+    image_filename = re.sub("'", '-', image_filename)
+    image_filename = re.sub('"', '-', image_filename)
     return image_filename
 
 
@@ -107,10 +110,11 @@ def convert_image(image_filename, img_dirs, output_dir):
     if not in_file:
         raise Exception(f'File missing: {image_filename}')
     out_file = normalize_image_filename(f'{filename}.png')
+    in_file_q = shlex.quote(in_file)
     if file_extension == '.svg':
-        cmd = f"rsvg-convert --background-color=none -o '{output_dir}/{out_file}' -w 50 -h 50 '{in_file}'"
+        cmd = f"rsvg-convert --background-color=none -o '{output_dir}/{out_file}' -w 50 -h 50 {in_file_q}"
     else:
-        cmd = f"gm convert '{in_file}' -resize 50x50 '{output_dir}/{out_file}'"
+        cmd = f"gm convert {in_file_q} -resize 50x50 '{output_dir}/{out_file}'"
     #print('Run:', cmd)
     os.system(cmd)
     return out_file

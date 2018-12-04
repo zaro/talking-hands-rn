@@ -10,28 +10,36 @@ export default {
     
     'conjunction',
     
-    null,
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
     
     null,
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    null,
+    
+    
     
     
     
@@ -58,6 +66,8 @@ export default {
       // pronoun
       WordsIndex['Искам'],
       // conjunction
+      WordsIndex['Има'],
+      WordsIndex['Няма'],
       ],
     [
       WordsIndex['син'],
@@ -70,6 +80,7 @@ export default {
       WordsIndex['шарен'],
       WordsIndex['зелен'],
       WordsIndex['кафяв'],
+      WordsIndex['бял'],
       ],
     [
       WordsIndex['панталон'],
@@ -82,6 +93,7 @@ export default {
       WordsIndex['ботуши'],
       WordsIndex['ръкавици'],
       WordsIndex['обувки за планина'],
+      WordsIndex['маратонки'],
       ],
     
   ]

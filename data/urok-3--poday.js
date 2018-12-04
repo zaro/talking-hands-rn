@@ -8,28 +8,36 @@ export default {
     
     'conjunction',
     
-    null,
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
     
     null,
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    null,
+    
+    
     
     
     
@@ -55,6 +63,8 @@ export default {
     [
       WordsIndex['Подай'],
       // conjunction
+      WordsIndex['Има'],
+      WordsIndex['Няма'],
       ],
     [
       WordsIndex['син'],
@@ -67,6 +77,7 @@ export default {
       WordsIndex['шарен'],
       WordsIndex['зелен'],
       WordsIndex['кафяв'],
+      WordsIndex['бял'],
       ],
     [
       WordsIndex['панталон'],
@@ -79,6 +90,7 @@ export default {
       WordsIndex['ръкавици'],
       WordsIndex['ботуши'],
       WordsIndex['обувки за планина'],
+      WordsIndex['маратонки'],
       ],
     
   ]

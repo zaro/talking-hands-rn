@@ -24,6 +24,21 @@ export default {
         img: require('./wimg/hand-over.png'),
         pronounce_as: 'Подаи',
       },
+  'Има': {
+        word: 'Има',
+        img: require('./wimg/to-have_4.png'),
+        
+      },
+  'Няма': {
+        word: 'Няма',
+        img: require('./wimg/i-don-t-want.png'),
+        
+      },
+  'Отивам': {
+        word: 'Отивам',
+        img: require('./wimg/to-go_5.png'),
+        
+      },
   'солети': {
         word: 'солети',
         img: require('./wimg/breadstick.png'),
@@ -79,6 +94,16 @@ export default {
         
         pronounce_as: 'Ии',
       },
+  'до': {
+        word: 'до',
+        
+        
+      },
+  'на': {
+        word: 'на',
+        
+        
+      },
   'книга': {
         word: 'книга',
         img: require('./wimg/book_1.png'),
@@ -122,6 +147,11 @@ export default {
   'ботуши': {
         word: 'ботуши',
         img: require('./wimg/rubber-boots_no_color.png'),
+        
+      },
+  'маратонки': {
+        word: 'маратонки',
+        img: require('./wimg/running-shoes.png'),
         
       },
   'шал': {
@@ -187,6 +217,56 @@ export default {
   'кафяв': {
         word: 'кафяв',
         img: require('./wimg/brown.png'),
+        
+      },
+  'бял': {
+        word: 'бял',
+        img: require('./wimg/white_2.png'),
+        
+      },
+  'тоалетна': {
+        word: 'тоалетна',
+        img: require('./wimg/toilet_6.png'),
+        
+      },
+  'банята': {
+        word: 'банята',
+        img: require('./wimg/shower_2.png'),
+        
+      },
+  'кухня': {
+        word: 'кухня',
+        img: require('./wimg/toy-kitchen.png'),
+        
+      },
+  'спалня': {
+        word: 'спалня',
+        img: require('./wimg/bedroom_1.png'),
+        
+      },
+  'навън': {
+        word: 'навън',
+        img: require('./wimg/to-go-for-a-walk_3.png'),
+        
+      },
+  'магазин': {
+        word: 'магазин',
+        img: require('./wimg/go-shopping_1.png'),
+        
+      },
+  'магазин за дрехи': {
+        word: 'магазин за дрехи',
+        img: require('./wimg/clothes-shop.png'),
+        
+      },
+  'магазин за обувки': {
+        word: 'магазин за обувки',
+        img: require('./wimg/shoe-shop.png'),
+        
+      },
+  'парка': {
+        word: 'парка',
+        img: require('./wimg/park.png'),
         
       },
   };
