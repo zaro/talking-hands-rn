@@ -54,6 +54,11 @@ export default {
         img: require('./wimg/grapes.png'),
         
       },
+  'чай': {
+        word: 'чай',
+        img: require('./wimg/tea.png'),
+        
+      },
   'лист': {
         word: 'лист',
         img: require('./wimg/sheets_2.png'),
@@ -87,6 +92,11 @@ export default {
   'Аз': {
         word: 'Аз',
         img: require('./wimg/Lili.png'),
+        
+      },
+  'съм': {
+        word: 'съм',
+        
         
       },
   'и': {
@@ -219,6 +229,11 @@ export default {
         img: require('./wimg/brown.png'),
         
       },
+  'сиво': {
+        word: 'сиво',
+        img: require('./wimg/grey.png'),
+        
+      },
   'бял': {
         word: 'бял',
         img: require('./wimg/white_2.png'),
@@ -249,8 +264,8 @@ export default {
         img: require('./wimg/to-go-for-a-walk_3.png'),
         
       },
-  'магазин': {
-        word: 'магазин',
+  'магазин за храни': {
+        word: 'магазин за храни',
         img: require('./wimg/go-shopping_1.png'),
         
       },
@@ -267,6 +282,51 @@ export default {
   'парка': {
         word: 'парка',
         img: require('./wimg/park.png'),
+        
+      },
+  'плувам ': {
+        word: 'плувам ',
+        img: require('./wimg/swimming_1.png'),
+        
+      },
+  'добра': {
+        word: 'добра',
+        img: require('./wimg/good.png'),
+        
+      },
+  'лоша': {
+        word: 'лоша',
+        img: require('./wimg/bad.png'),
+        
+      },
+  'тъжна': {
+        word: 'тъжна',
+        img: require('./wimg/sad.png'),
+        
+      },
+  'щастлива': {
+        word: 'щастлива',
+        img: require('./wimg/happy-look.png'),
+        
+      },
+  'ядосана': {
+        word: 'ядосана',
+        img: require('./wimg/angry_1.png'),
+        
+      },
+  'спокойна': {
+        word: 'спокойна',
+        img: require('./wimg/content.png'),
+        
+      },
+  'срамува се': {
+        word: 'срамува се',
+        img: require('./wimg/embarrassment.png'),
+        
+      },
+  'не знам': {
+        word: 'не знам',
+        img: require('./wimg/I-do-not-know.png'),
         
       },
   };

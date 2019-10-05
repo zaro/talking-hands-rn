@@ -12,7 +12,13 @@ export default {
     
     
     
+    'да',
+    
+    'не',
+    
     null,
+    
+    
     
     
     
@@ -38,6 +44,8 @@ export default {
       WordsIndex['и'],
       WordsIndex['до'],
       WordsIndex['на'],
+      // да
+      // не
       ],
     [
       WordsIndex['тоалетна'],
@@ -46,9 +54,10 @@ export default {
       WordsIndex['банята'],
       WordsIndex['навън'],
       WordsIndex['парка'],
-      WordsIndex['магазин'],
+      WordsIndex['магазин за храни'],
       WordsIndex['магазин за дрехи'],
       WordsIndex['магазин за обувки'],
+      WordsIndex['плувам '],
       ],
     
   ]

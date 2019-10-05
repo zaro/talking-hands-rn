@@ -23,6 +23,8 @@ export default {
     
     
     
+    
+    
   ],
   columns:[
     [
@@ -37,6 +39,7 @@ export default {
       WordsIndex['грозде'],
       WordsIndex['банан'],
       WordsIndex['лимон'],
+      WordsIndex['чай'],
       ],
     
   ]

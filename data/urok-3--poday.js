@@ -58,6 +58,8 @@ export default {
     
     
     
+    
+    
   ],
   columns:[
     [
@@ -91,6 +93,7 @@ export default {
       WordsIndex['ботуши'],
       WordsIndex['обувки за планина'],
       WordsIndex['маратонки'],
+      WordsIndex['дънки'],
       ],
     
   ]
