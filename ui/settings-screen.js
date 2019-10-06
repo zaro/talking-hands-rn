@@ -4,14 +4,14 @@ import {
   View,
   Text,
   Button,
-  Slider,
   Picker,
-  CheckBox,
   TouchableNativeFeedback,
   TouchableOpacity,
   Alert,
 } from 'react-native';
-import Platform from 'Platform';
+import CheckBox from '@react-native-community/checkbox';
+import Slider from '@react-native-community/slider';
+
 import { connect } from 'react-redux'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import AppStyles from '../styles';
@@ -44,7 +44,7 @@ class SettingsScreen extends React.Component {
     voices: [defaultVoice]
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     Tts.voices().then(voicesList => {
       const voices = [defaultVoice];
       for(let voice of voicesList) {

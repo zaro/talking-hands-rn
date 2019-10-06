@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import Platform from 'Platform';
+import {Platform} from 'react-native';
 
 const styles = {
   appBackground: {

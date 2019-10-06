@@ -5,21 +5,21 @@ import {
   Text,
   Button,
 } from 'react-native';
-import { NavigationActions } from 'react-navigation'
+import { NavigationActions, StackActions } from 'react-navigation'
 import AppStyles from '../styles';
 import I18n from '../i18n';
 
 import ImageButton  from './components/image-button';
 import SpeakButtonsColumn from './components/speak-buttons-column';
 
-const resetToConversation = NavigationActions.reset({
+const resetToConversation = StackActions.reset({
   index: 0,
   actions: [
     NavigationActions.navigate({ routeName: 'Conversation'})
   ]
 })
 
-const resetToTutor = NavigationActions.reset({
+const resetToTutor = StackActions.reset({
   index: 0,
   actions: [
     NavigationActions.navigate({ routeName: 'Tutor'})

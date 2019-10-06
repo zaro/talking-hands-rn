@@ -90,6 +90,7 @@ export default class SpeakButtonsColumn extends PureComponent {
         data={this.getListItems()}
         renderItem={this.renderItem}
         ListHeaderComponent={this.renderHeader()}
+        keyExtractor={item => item.key.toString()}
       />
     );
   }

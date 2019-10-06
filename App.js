@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import AppNavigator from './navigators/app-navigator';
+import { AppNavigator } from './navigators/app-navigator';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import appReducer from './reducers';
-import { addNavigationHelpers } from 'react-navigation';
-import {AppState} from 'react-native'
+import {AppState, BackHandler} from 'react-native'
+import { NavigationActions } from 'react-navigation';
 
 import Tts from './tts';
 import {settingsReplace} from './reducers/actions'
@@ -13,17 +13,14 @@ const store = createStore(appReducer);
 
 
 export default class App extends Component<{}> {
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     Tts.init(store);
     Storage.load(store);
   }
   render() {
     return (
       <Provider store={store}>
-        <AppNavigator navigation={addNavigationHelpers({
-          dispatch: this.props.dispatch,
-          state: this.props.nav,
-        })}/>
+        <AppNavigator/>
       </Provider>
     );
   }

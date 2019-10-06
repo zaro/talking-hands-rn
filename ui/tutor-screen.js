@@ -7,7 +7,7 @@ import {
   TouchableNativeFeedback,
   TouchableOpacity,
 } from 'react-native';
-import Platform from 'Platform';
+import {Platform} from 'react-native';
 import AppStyles from '../styles';
 import SpeakButtonsColumn from './components/speak-buttons-column';
 import I18n from '../i18n';

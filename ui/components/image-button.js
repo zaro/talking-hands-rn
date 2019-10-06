@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-import ColorPropType from 'ColorPropType';
+import {ColorPropType, Platform} from 'react-native';
 import AppStyles from '../../styles';
 
 import {
@@ -12,7 +12,6 @@ import {
   Image
 } from 'react-native';
 
-import Platform from 'Platform';
 
 import Tts from 'react-native-tts';
 

@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import {
+  Platform,
   View,
   TouchableNativeFeedback,
   TouchableOpacity,
 } from 'react-native';
-import Platform from 'Platform';
 
 export default class Touchable extends PureComponent {
   render() {
@@ -14,7 +14,7 @@ export default class Touchable extends PureComponent {
       onPress,
       style,
       children,
-      ...props,
+      ...props
     } = this.props;
 
     if(Platform.OS === 'android') {
@@ -34,7 +34,7 @@ export default class Touchable extends PureComponent {
           accessibilityComponentType={accessibilityComponentType}
           disabled={disabled}
           onPress={onPress}
-          {...props} 
+          {...props}
         >
           {children}
         </TouchableOpacity>

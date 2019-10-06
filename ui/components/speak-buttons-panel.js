@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Platform from 'Platform';
 
-import {StyleSheet, View, ScrollView, FlatList} from 'react-native';
+import {StyleSheet, View, ScrollView, FlatList, Platform} from 'react-native';
 
 import SpeakButton from './speak-button';
 
@@ -67,6 +66,7 @@ export default class SpeakButtonsPanel extends Component {
       <FlatList
         data={this.getListItems()}
         renderItem={this.renderRow}
+        keyExtractor={item => item.key.toString()}
       />
     );
   }

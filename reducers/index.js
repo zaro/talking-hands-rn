@@ -1,24 +1,9 @@
 import { combineReducers } from 'redux';
 import { NavigationActions } from 'react-navigation';
 
-import { AppNavigator } from '../navigators/app-navigator';
 
 import * as actions from './actions';
 import * as defaults from './defaults'
-
-const initialNavState = AppNavigator.router.getStateForAction(AppNavigator.router.getActionForPathAndParams(defaults.startScreen));
-
-function nav(state = initialNavState, action) {
-  let nextState;
-  switch (action.type) {
-    default:
-      nextState = AppNavigator.router.getStateForAction(action, state);
-      break;
-  }
-
-  // Simply return the original `state` if `nextState` is null or undefined.
-  return nextState || state;
-}
 
 function converse(state = defaults.converseState, action) {
   switch (action.type) {
@@ -65,7 +50,6 @@ function settings(state = defaults.settings, action) {
 }
 
 const AppReducer = combineReducers({
-  nav,
   converse,
   settings,
 });

@@ -1,5 +1,4 @@
 import Tts from 'react-native-tts';
-import Platform from 'Platform';
 
 function ifChangedNonNull(previousSettings, currentSettings, settingName) {
   return currentSettings[settingName] && (previousSettings[settingName] !== currentSettings[settingName]);

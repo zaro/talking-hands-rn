@@ -1,36 +1,42 @@
 {
-	"name": "talkinghands",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest"
-	},
-	"dependencies": {
-		"iso-639-1": "^1.3.0",
-		"react": "16.0.0-beta.5",
-		"react-native": "0.49.3",
-		"react-native-i18n": "^2.0.8",
-		"react-native-tts": "^1.4.1",
-		"react-native-vector-icons": "^4.4.2",
-		"react-navigation": "^1.0.0-beta.13",
-		"react-redux": "^5.0.6",
-		"redux": "^3.7.2"
-	},
-	"devDependencies": {
-		"babel-cli": "^6.26.0",
-		"babel-jest": "21.2.0",
-		"babel-plugin-add-module-exports": "^0.2.1",
-		"babel-plugin-transform-runtime": "^6.23.0",
-		"babel-preset-es2015": "^6.24.1",
-		"babel-preset-flow": "^6.23.0",
-		"babel-preset-react-native": "4.0.0",
-		"babel-preset-stage-0": "^6.24.1",
-		"flow-bin": "^0.57.3",
-		"jest": "21.2.1",
-		"react-test-renderer": "16.0.0-beta.5"
-	},
-	"jest": {
-		"preset": "react-native"
-	}
+  "name": "talkinghands",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.6.2",
+    "@react-native-community/checkbox": "^0.2.0",
+    "@react-native-community/slider": "^2.0.1",
+    "iso-639-1": "^2.1.0",
+    "react": "16.9.0",
+    "react-native": "0.61.2",
+    "react-native-gesture-handler": "^1.4.1",
+    "react-native-i18n": "^2.0.15",
+    "react-native-reanimated": "^1.3.0",
+    "react-native-screens": "^1.0.0-alpha.23",
+    "react-native-tts": "^3.0.0",
+    "react-native-vector-icons": "^6.6.0",
+    "react-navigation": "^4.0.10",
+    "react-navigation-stack": "^1.9.3",
+    "react-redux": "^7.1.1",
+    "redux": "^4.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/runtime": "^7.5.0",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "babel-jest": "^24.1.0",
+    "eslint": "^6.5.1",
+    "jest": "^24.1.0",
+    "metro-react-native-babel-preset": "^0.51.1",
+    "react-test-renderer": "16.8.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
 }
