@@ -36,3 +36,16 @@ allprojects {
         maven { url 'https://jitpack.io' }
     }
 }
+
+// Fix for linking errors from : https://stackoverflow.com/a/52378246/2103946
+subprojects {
+    afterEvaluate {project ->
+    // force libs to use recent buildtools
+        if (project.hasProperty("android")) {
+            android {
+                compileSdkVersion = 28  // change to match version above
+                buildToolsVersion = "28.0.3" // ....
+            }
+        }
+    }
+}

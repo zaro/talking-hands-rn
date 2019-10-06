@@ -1,2 +1,2 @@
-json_key_file "/Users/zaro/dev/talkinghands/android/fastlane-key.json" # Path to the json secret file - Follow https://github.com/fastlane/supply#setup to get one
+json_key_file "fastlane-key.json" # Path to the json secret file - Follow https://github.com/fastlane/supply#setup to get one
 package_name "com.talkinghands" # e.g. com.krausefx.app

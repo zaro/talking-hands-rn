@@ -28,7 +28,7 @@ platform :android do
   desc "Submit a new Beta Build"
   lane :beta do
     gradle(task: "assembleRelease")
-    supply(track: 'beta')
+    supply(track: 'beta', skip_upload_apk: true)
     #crashlytics
 
     # sh "your_script.sh"
@@ -38,7 +38,7 @@ platform :android do
   desc "Deploy a new version to the Google Play"
   lane :deploy do
     gradle(task: "assembleRelease")
-    supply
+    supply(skip_upload_apk: true)
   end
 
   # You can define as many lanes as you want
