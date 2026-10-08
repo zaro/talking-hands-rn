@@ -1,0 +1,17 @@
+export default {
+  cancel: 'Cancel',
+  ok: 'OK',
+  conversation: 'Conversation',
+  tutor: 'Tutor',
+  lesson: 'Lesson',
+  settings: 'Settings',
+  menu: 'Menu',
+  voice: 'Voice',
+  default: 'Default',
+  speech_rate: 'Speech Rate',
+  speech_pitch: 'Speech Pitch',
+  speak_on_word_press: 'Say word on press',
+  reset_settings: 'Reset default settings',
+  reset_message:
+    'This will reset all values to their defaults. You need to restart the app for the voice change to take effect.',
+};
