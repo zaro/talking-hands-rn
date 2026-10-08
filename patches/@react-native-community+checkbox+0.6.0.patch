@@ -1,0 +1,16 @@
+diff --git a/node_modules/@react-native-community/checkbox/android/build.gradle b/node_modules/@react-native-community/checkbox/android/build.gradle
+index 743c7d1..ccd5f2a 100644
+--- a/node_modules/@react-native-community/checkbox/android/build.gradle
++++ b/node_modules/@react-native-community/checkbox/android/build.gradle
+@@ -48,6 +48,11 @@ android {
+     compileSdkVersion getExtOrIntegerDefault('compileSdkVersion')
+     buildToolsVersion getExtOrDefault('buildToolsVersion')
+ 
++    // Patch: AGP 9+ requires this explicitly when declaring buildConfigField.
++    buildFeatures {
++        buildConfig true
++    }
++
+     defaultConfig {
+         minSdkVersion getExtOrIntegerDefault('minSdkVersion')
+         targetSdkVersion getExtOrIntegerDefault('targetSdkVersion')

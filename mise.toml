@@ -1,9 +1,6 @@
 [tools]
-# Legacy React Native 0.61.2 (2019) toolchain.
-# Node 12 LTS: npm 6 (has `npm ci`), still compatible with RN 0.61 / Metro.
-node = "12.22.12"
-# JDK 8 is required by Android Gradle Plugin 3.4.2 / Gradle 5.5.
-java = "temurin-8"
-# Android command-line tools; sets ANDROID_HOME / ANDROID_SDK_ROOT and puts
-# platform-tools, emulator and the newest installed build-tools on PATH.
+# Modernized toolchain (React Native 0.87).
+# Node 22+ required by RN; JDK 17 required by AGP 8/9.
+node = "24.13.0"
+java = "temurin-17"
 android-sdk = "23.0"
