@@ -34,6 +34,9 @@ export const AppNavigatorStack = createStackNavigator({
   Settings: {screen: SettingsScreen},
 },{
   defaultNavigationOptions: ({navigation}) => ({
+    // The app runs full-screen (status bar hidden) - don't let the header
+    // reserve safe-area space for it.
+    headerForceInset: { top: 'never', bottom: 'never', horizontal: 'always' },
     headerRight:   (
       navigation.state.routeName !== 'Menu'
       ?(

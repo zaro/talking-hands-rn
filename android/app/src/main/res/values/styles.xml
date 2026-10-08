@@ -9,6 +9,9 @@
              so the buttons keep a soft, subtle shadow. -->
         <item name="android:ambientShadowAlpha">0.02</item>
         <item name="android:spotShadowAlpha">0.10</item>
+        <!-- Full-screen: allow the window to also use the display cutout area
+             (status bar region) so no black strip remains at the top. -->
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
     </style>
 
 </resources>
