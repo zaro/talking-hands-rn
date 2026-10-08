@@ -203,9 +203,12 @@ Known TODO for iOS: register the `MaterialIcons` font (`UIAppFonts` in
 
 Android releases are handled by Fastlane (`android/fastlane/Fastfile`) and are
 signed with the keystores in `android/keystores/` (passwords are wired through
-`android/gradle.properties`). Before publishing, review the merged manifest for
-permissions (`SYSTEM_ALERT_WINDOW`, `READ_PHONE_STATE`) – debug builds
-automatically receive the dev-menu permission, release builds should not.
+`android/gradle.properties`). The Google Play service-account key
+(`android/fastlane-key.json`) is **not tracked** – keep a copy outside the
+repository and place it there locally when running the release lanes. Before
+publishing, review the merged manifest for permissions (`SYSTEM_ALERT_WINDOW`,
+`READ_PHONE_STATE`) – debug builds automatically receive the dev-menu
+permission, release builds should not.
 
 ## Author
 
