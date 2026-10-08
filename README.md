@@ -206,3 +206,7 @@ signed with the keystores in `android/keystores/` (passwords are wired through
 `android/gradle.properties`). Before publishing, review the merged manifest for
 permissions (`SYSTEM_ALERT_WINDOW`, `READ_PHONE_STATE`) – debug builds
 automatically receive the dev-menu permission, release builds should not.
+
+## Author
+
+Svetlozar Argirov <zarrro@gmail.com> [Broken By Design](https://broken-by-design.art)
