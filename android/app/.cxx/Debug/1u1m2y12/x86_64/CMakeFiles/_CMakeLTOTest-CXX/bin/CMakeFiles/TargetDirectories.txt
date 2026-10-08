@@ -1,4 +1,0 @@
-/home/zaro/dev/talking-hands-rn/android/app/.cxx/Debug/1u1m2y12/x86_64/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/foo.dir
-/home/zaro/dev/talking-hands-rn/android/app/.cxx/Debug/1u1m2y12/x86_64/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/boo.dir
-/home/zaro/dev/talking-hands-rn/android/app/.cxx/Debug/1u1m2y12/x86_64/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/edit_cache.dir
-/home/zaro/dev/talking-hands-rn/android/app/.cxx/Debug/1u1m2y12/x86_64/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/rebuild_cache.dir
