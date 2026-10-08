@@ -12,4 +12,12 @@
 
     <!-- Allows changing locales -->
     <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+
+    <!-- Debug builds fetch the JS bundle from the Metro dev server over plain HTTP
+         (localhost:8081 via `adb reverse`). Android 9+ (API 28) blocks cleartext HTTP
+         by default, so allow it for debug builds only. -->
+    <application
+        android:usesCleartextTraffic="true"
+        tools:targetApi="28"
+        tools:ignore="GoogleAppIndexingWarning" />
 </manifest>
