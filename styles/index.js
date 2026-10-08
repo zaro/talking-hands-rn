@@ -14,7 +14,11 @@ const styles = {
         borderWidth: 3,
       },
       android: {
-        elevation: 4,
+        // Opaque fill (same as the app background) stops the elevation shadow
+        // from bleeding through the transparent button, so it reads as a tight
+        // outer shadow instead of a wide dark frame inside the button.
+        backgroundColor: '#F5FCFF',
+        elevation: 2,
       }
     })
   },
