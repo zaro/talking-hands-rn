@@ -3,14 +3,14 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="android:textColor">#000000</item>
+        <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
         <!-- Modern Android (12+) renders elevation shadows much harsher than
              it did when this app was built. Lower the framework shadow alphas
              so the buttons keep a soft, subtle shadow. -->
         <item name="android:ambientShadowAlpha">0.02</item>
         <item name="android:spotShadowAlpha">0.10</item>
         <!-- Full-screen: allow the window to also use the display cutout area
-             (status bar region) so no black strip remains at the top. -->
+             so no black strip remains at the top. -->
         <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
     </style>
 
