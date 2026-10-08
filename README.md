@@ -17,6 +17,12 @@ with React Native (Android and iOS).
   "say word on press", reset settings.
 - Bilingual UI (Bulgarian / English) via `i18n-js`.
 
+## Screenshots
+
+![Conversation screen](screenshots/conversation.png)
+
+See all screens — [Conversation, Menu, Tutor, Lesson and Settings](screenshots/README.md).
+
 ## Tech stack
 
 | Area | Choice |
