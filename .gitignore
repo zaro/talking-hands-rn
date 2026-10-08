@@ -60,5 +60,6 @@ wordimg/
 
 android/vendor/
 android/.bundle/
+android/app/.cxx/
 
 wordimages
